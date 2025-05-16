@@ -7,25 +7,60 @@
     src="https://www.paypal.com/sdk/js?client-id=BAAzn9jrLBwjDuYWey1EQIzLSrDUrRtKB_-TzFRTelgpc8V2yvTFNl2WQsXvTMIXyh6NwS8k-ym6rhelVY&components=hosted-buttons&disable-funding=venmo&currency=MXN">
   </script>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 50px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
       text-align: center;
     }
 
     h1 {
       color: #333;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-top: 0;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    #paypal-container-UW793YX2RPKCY {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Pago de Reserva</h1>
-  <div id="paypal-container-UW793YX2RPKCY"></div>
+  <div class="container">
+    <h1>Pago de Reserva</h1>
+    <p>¡Tu próxima aventura está a un paso más cerca!<br>Por favor, coloca el monto acordado con tu asesor de viaje.</p>
+    <div id="paypal-container-UW793YX2RPKCY"></div>
+  </div>
+
   <script>
     paypal.HostedButtons({
       hostedButtonId: "UW793YX2RPKCY",
