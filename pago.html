@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago de reserva - ViajaME</title>
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAzn9jrLBwjDuYWey1EQIzLSrDUrRtKB_-TzFRTelgpc8V2yvTFNl2WQsXvTMIXyh6NwS8k-ym6rhelVY&components=hosted-buttons&disable-funding=venmo&currency=MXN">
+  </script>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pago de Reserva</h1>
+  <div id="paypal-container-UW793YX2RPKCY"></div>
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "UW793YX2RPKCY",
+    }).render("#paypal-container-UW793YX2RPKCY");
+  </script>
+</body>
+</html>
