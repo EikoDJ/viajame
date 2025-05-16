@@ -16,26 +16,69 @@
       padding: 20px;
       text-align: center;
     }
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     h1 {
       margin-top: 20px;
       font-size: 2em;
       color: #333;
     }
+
     p {
       color: #666;
     }
+
+    .pay-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .pay-btn:hover {
+      background-color: #005c9c;
+    }
+
+    .paypal-container {
+      margin-top: 100px;
+    }
   </style>
+
+  <!-- Parte 1: Script de PayPal -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAzn9jrLBwjDuYWey1EQIzLSrDUrRtKB_-TzFRTelgpc8V2yvTFNl2WQsXvTMIXyh6NwS8k-ym6rhelVY&components=hosted-buttons&disable-funding=venmo&currency=MXN">
+  </script>
 </head>
 <body>
   <img src="viajame.jpg" alt="ViajaME - Sitio en construcción">
   <h1>¡Muy pronto!</h1>
   <h1>Estamos construyendo una nueva forma de viajar 🌍✈️</h1>
-  <h1>Si quieres comenzar a cotizar escribenos por whatsapp al 56 6781 3203 </h1>
+  <h1>Si quieres comenzar a cotizar escríbenos por WhatsApp al 56 6781 3203</h1>
+
+  <!-- Botón para bajar al pago -->
+  <a href="#pago" class="pay-btn">Quiero pagar mi reserva de viaje</a>
+
+  <!-- Contenedor de PayPal -->
+  <div class="paypal-container" id="pago">
+    <h2>Pago de Reserva</h2>
+    <div id="paypal-container-UW793YX2RPKCY"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "UW793YX2RPKCY",
+      }).render("#paypal-container-UW793YX2RPKCY");
+    </script>
+  </div>
 </body>
 </html>
